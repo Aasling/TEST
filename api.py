@@ -16,7 +16,6 @@ def login():
         token = base64.b64encode(username.encode()).decode()
         return jsonify({"token": token})
     return jsonify({"error": "Invalid credentials"}), 401
-
 @app.route('/pay', methods=['POST'])
 def pay():
     data = request.get_json()
